@@ -1,0 +1,185 @@
+{
+    "familyTree": {
+        "id": "root",
+        "name": "John Smith",
+        "birthDate": "1950",
+        "status": "alive",
+        "details": {
+            "pt": "Engenheiro civil, nascido em São Paulo. Trabalhou por 30 anos na construção de pontes.",
+            "en": "Civil engineer, born in São Paulo. Worked for 30 years in bridge construction.",
+            "de": "Bauingenieur, geboren in São Paulo. Arbeitete 30 Jahre im Brückenbau.",
+            "fr": "Ingénieur civil, né à São Paulo. A travaillé 30 ans dans la construction de ponts."
+        },
+        "spouse": {
+            "id": "spouse_root",
+            "name": "Mary Johnson Smith",
+            "birthDate": "1952",
+            "status": "alive",
+            "details": {
+                "pt": "Professora de matemática, conheceu John na universidade.",
+                "en": "Mathematics teacher, met John at university.",
+                "de": "Mathematiklehrerin, lernte John an der Universität kennen.",
+                "fr": "Professeure de mathématiques, a rencontré John à l'université."
+            }
+        },
+        "children": [
+            {
+                "id": "child1",
+                "name": "Michael Smith",
+                "birthDate": "1975",
+                "status": "alive",
+                "details": {
+                    "pt": "Médico pediatra, especialista em cardiologia infantil.",
+                    "en": "Pediatrician, specialist in pediatric cardiology.",
+                    "de": "Kinderarzt, Spezialist für Kinderkardiologie.",
+                    "fr": "Pédiatre, spécialiste en cardiologie pédiatrique."
+                },
+                "spouse": {
+                    "id": "spouse_child1",
+                    "name": "Lisa Anderson Smith",
+                    "birthDate": "1978",
+                    "status": "alive",
+                    "details": {
+                        "pt": "Enfermeira, trabalha no mesmo hospital que Michael.",
+                        "en": "Nurse, works at the same hospital as Michael.",
+                        "de": "Krankenschwester, arbeitet im selben Krankenhaus wie Michael.",
+                        "fr": "Infirmière, travaille dans le même hôpital que Michael."
+                    }
+                },
+                "children": [
+                    {
+                        "id": "grandchild1",
+                        "name": "Emma Smith",
+                        "birthDate": "2005",
+                        "status": "alive",
+                        "details": {
+                            "pt": "Estudante do ensino médio, adora arte e música.",
+                            "en": "High school student, loves art and music.",
+                            "de": "Gymnasiastin, liebt Kunst und Musik.",
+                            "fr": "Élève de lycée, adore l'art et la musique."
+                        },
+                        "children": []
+                    },
+                    {
+                        "id": "grandchild2",
+                        "name": "James Smith",
+                        "birthDate": "2008",
+                        "status": "alive",
+                        "details": {
+                            "pt": "Aluno do ensino fundamental, jogador de futebol.",
+                            "en": "Elementary student, soccer player.",
+                            "de": "Grundschüler, Fußballspieler.",
+                            "fr": "Élève de primaire, joueur de football."
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "id": "child2",
+                "name": "Sarah Smith",
+                "birthDate": "1980",
+                "status": "alive",
+                "details": {
+                    "pt": "Arquiteta, especializada em design sustentável.",
+                    "en": "Architect, specialized in sustainable design.",
+                    "de": "Architektin, spezialisiert auf nachhaltiges Design.",
+                    "fr": "Architecte, spécialisée en design durable."
+                },
+                "spouse": {
+                    "id": "spouse_child2",
+                    "name": "David Clark",
+                    "birthDate": "1979",
+                    "status": "alive",
+                    "details": {
+                        "pt": "Advogado, apaixonado por fotografia.",
+                        "en": "Lawyer, passionate about photography.",
+                        "de": "Rechtsanwalt, leidenschaftlicher Fotograf.",
+                        "fr": "Avocat, passionné de photographie."
+                    }
+                },
+                "children": [
+                    {
+                        "id": "grandchild3",
+                        "name": "Olivia Clark",
+                        "birthDate": "2010",
+                        "status": "alive",
+                        "details": {
+                            "pt": "Gosta de dançar e tocar piano.",
+                            "en": "Loves to dance and play the piano.",
+                            "de": "Liebt Tanzen und Klavierspielen.",
+                            "fr": "Aime danser et jouer du piano."
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "id": "child3",
+                "name": "Robert Smith",
+                "birthDate": "1982",
+                "status": "deceased",
+                "deceasedDate": "2020",
+                "details": {
+                    "pt": "Jornalista, viajou o mundo cobrindo histórias.",
+                    "en": "Journalist, traveled the world covering stories.",
+                    "de": "Journalist, bereiste die Welt und berichtete über Geschichten.",
+                    "fr": "Journaliste, a parcouru le monde pour couvrir des histoires."
+                },
+                "children": []
+            },
+            {
+                "id": "child4",
+                "name": "Jessica Smith",
+                "birthDate": "1985",
+                "status": "alive",
+                "details": {
+                    "pt": "Designer de software, entusiasta de tecnologia.",
+                    "en": "Software designer, technology enthusiast.",
+                    "de": "Software-Designerin, Technologie-Enthusiastin.",
+                    "fr": "Concepteur de logiciels, passionné de technologie."
+                },
+                "spouse": {
+                    "id": "spouse_child4",
+                    "name": "Paul White",
+                    "birthDate": "1984",
+                    "status": "alive",
+                    "details": {
+                        "pt": "Chef de cozinha, dono de um restaurante.",
+                        "en": "Chef, owner of a restaurant.",
+                        "de": "Koch, Besitzer eines Restaurants.",
+                        "fr": "Chef cuisinier, propriétaire d'un restaurant."
+                    }
+                },
+                "children": [
+                    {
+                        "id": "grandchild4",
+                        "name": "Lucas White",
+                        "birthDate": "2015",
+                        "status": "alive",
+                        "details": {
+                            "pt": "Adora animais e quer ser veterinário.",
+                            "en": "Loves animals and wants to be a vet.",
+                            "de": "Liebt Tiere und möchte Tierarzt werden.",
+                            "fr": "Aime les animaux et veut devenir vétérinaire."
+                        },
+                        "children": []
+                    },
+                    {
+                        "id": "grandchild5",
+                        "name": "Sophia White",
+                        "birthDate": "2018",
+                        "status": "alive",
+                        "details": {
+                            "pt": "Gosta de desenhar e pintar.",
+                            "en": "Loves to draw and paint.",
+                            "de": "Liebt es zu zeichnen und zu malen.",
+                            "fr": "Aime dessiner et peindre."
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
+}

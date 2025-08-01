@@ -1,0 +1,9 @@
+{
+    "family-name": "Smith",
+    "subtitle": {
+        "en": "A visual representation of our family connections.",
+        "pt": "Uma representação visual das nossas conexões familiares.",
+        "de": "Eine visuelle Darstellung unserer familiären Verbindungen."
+    },
+    "tree": "example_family"
+}

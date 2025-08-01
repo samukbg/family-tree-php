@@ -1,0 +1,22 @@
+{
+    "trees": [
+        {
+            "id": "example_family",
+            "title": {
+                "pt": "Smith Family",
+                "en": "Example Family",
+                "de": "Familie Example"
+            },
+            "subtitle": {
+                "pt": "Uma representação visual das conexões familiares",
+                "en": "A visual representation of a family",
+                "de": "Eine visuelle Darstellung der familiären"
+            },
+            "image": "tree_images\/example_family_cover.jpeg",
+            "dataFile": "data.json",
+            "siteDataFile": "site_data.json",
+            "createdAt": "2025-08-01T00:00:00Z",
+            "updatedAt": "2025-08-01T12:07:53+02:00"
+        }
+    ]
+}
