@@ -8,7 +8,8 @@
             "pt": "Engenheiro civil, nascido em São Paulo. Trabalhou por 30 anos na construção de pontes.",
             "en": "Civil engineer, born in São Paulo. Worked for 30 years in bridge construction.",
             "de": "Bauingenieur, geboren in São Paulo. Arbeitete 30 Jahre im Brückenbau.",
-            "fr": "Ingénieur civil, né à São Paulo. A travaillé 30 ans dans la construction de ponts."
+            "fr": "Ingénieur civil, né à São Paulo. A travaillé 30 ans dans la construction de ponts.",
+            "et": "Ehitusinsener, sündinud São Paulos. Töötas 30 aastat sildade ehituses."
         },
         "spouse": {
             "id": "spouse_root",
@@ -19,7 +20,8 @@
                 "pt": "Professora de matemática, conheceu John na universidade.",
                 "en": "Mathematics teacher, met John at university.",
                 "de": "Mathematiklehrerin, lernte John an der Universität kennen.",
-                "fr": "Professeure de mathématiques, a rencontré John à l'université."
+                "fr": "Professeure de mathématiques, a rencontré John à l'université.",
+                "et": "Matemaatikaõpetaja, kohtus Johniga ülikoolis."
             }
         },
         "children": [
@@ -32,7 +34,8 @@
                     "pt": "Médico pediatra, especialista em cardiologia infantil.",
                     "en": "Pediatrician, specialist in pediatric cardiology.",
                     "de": "Kinderarzt, Spezialist für Kinderkardiologie.",
-                    "fr": "Pédiatre, spécialiste en cardiologie pédiatrique."
+                    "fr": "Pédiatre, spécialiste en cardiologie pédiatrique.",
+                    "et": "LastevaArst, lastekardioloogia spetsialist."
                 },
                 "spouse": {
                     "id": "spouse_child1",
@@ -43,7 +46,8 @@
                         "pt": "Enfermeira, trabalha no mesmo hospital que Michael.",
                         "en": "Nurse, works at the same hospital as Michael.",
                         "de": "Krankenschwester, arbeitet im selben Krankenhaus wie Michael.",
-                        "fr": "Infirmière, travaille dans le même hôpital que Michael."
+                        "fr": "Infirmière, travaille dans le même hôpital que Michael.",
+                        "et": "Õde, töötab samas haiglas kui Michael."
                     }
                 },
                 "children": [
@@ -56,7 +60,8 @@
                             "pt": "Estudante do ensino médio, adora arte e música.",
                             "en": "High school student, loves art and music.",
                             "de": "Gymnasiastin, liebt Kunst und Musik.",
-                            "fr": "Élève de lycée, adore l'art et la musique."
+                            "fr": "Élève de lycée, adore l'art et la musique.",
+                            "et": "Keskkooli õpilane, armastab kunsti ja muusikat."
                         },
                         "children": []
                     },
@@ -69,7 +74,8 @@
                             "pt": "Aluno do ensino fundamental, jogador de futebol.",
                             "en": "Elementary student, soccer player.",
                             "de": "Grundschüler, Fußballspieler.",
-                            "fr": "Élève de primaire, joueur de football."
+                            "fr": "Élève de primaire, joueur de football.",
+                            "et": "Põhikooli õpilane, jalgpallur."
                         },
                         "children": []
                     }
@@ -84,7 +90,8 @@
                     "pt": "Arquiteta, especializada em design sustentável.",
                     "en": "Architect, specialized in sustainable design.",
                     "de": "Architektin, spezialisiert auf nachhaltiges Design.",
-                    "fr": "Architecte, spécialisée en design durable."
+                    "fr": "Architecte, spécialisée en design durable.",
+                    "et": "Arhitekt, spetsialiseerunud jätkusuutlikule disainile."
                 },
                 "spouse": {
                     "id": "spouse_child2",
@@ -95,7 +102,8 @@
                         "pt": "Advogado, apaixonado por fotografia.",
                         "en": "Lawyer, passionate about photography.",
                         "de": "Rechtsanwalt, leidenschaftlicher Fotograf.",
-                        "fr": "Avocat, passionné de photographie."
+                        "fr": "Avocat, passionné de photographie.",
+                        "et": "Advokaat, kirglik fotograaf."
                     }
                 },
                 "children": [
@@ -108,7 +116,8 @@
                             "pt": "Gosta de dançar e tocar piano.",
                             "en": "Loves to dance and play the piano.",
                             "de": "Liebt Tanzen und Klavierspielen.",
-                            "fr": "Aime danser et jouer du piano."
+                            "fr": "Aime danser et jouer du piano.",
+                            "et": "Armastab tantsida ja klaverit mängida."
                         },
                         "children": []
                     }
@@ -124,7 +133,8 @@
                     "pt": "Jornalista, viajou o mundo cobrindo histórias.",
                     "en": "Journalist, traveled the world covering stories.",
                     "de": "Journalist, bereiste die Welt und berichtete über Geschichten.",
-                    "fr": "Journaliste, a parcouru le monde pour couvrir des histoires."
+                    "fr": "Journaliste, a parcouru le monde pour couvrir des histoires.",
+                    "et": "Ajakirjanik, rändas üle maailma lugusid kajastamas."
                 },
                 "children": []
             },
@@ -137,7 +147,8 @@
                     "pt": "Designer de software, entusiasta de tecnologia.",
                     "en": "Software designer, technology enthusiast.",
                     "de": "Software-Designerin, Technologie-Enthusiastin.",
-                    "fr": "Concepteur de logiciels, passionné de technologie."
+                    "fr": "Concepteur de logiciels, passionné de technologie.",
+                    "et": "Tarkvaradisainer, tehnoloogia entusiast."
                 },
                 "spouse": {
                     "id": "spouse_child4",
@@ -148,7 +159,8 @@
                         "pt": "Chef de cozinha, dono de um restaurante.",
                         "en": "Chef, owner of a restaurant.",
                         "de": "Koch, Besitzer eines Restaurants.",
-                        "fr": "Chef cuisinier, propriétaire d'un restaurant."
+                        "fr": "Chef cuisinier, propriétaire d'un restaurant.",
+                        "et": "Peakokk, restorani omanik."
                     }
                 },
                 "children": [
@@ -161,7 +173,8 @@
                             "pt": "Adora animais e quer ser veterinário.",
                             "en": "Loves animals and wants to be a vet.",
                             "de": "Liebt Tiere und möchte Tierarzt werden.",
-                            "fr": "Aime les animaux et veut devenir vétérinaire."
+                            "fr": "Aime les animaux et veut devenir vétérinaire.",
+                            "et": "Armastab loomi ja tahab saada veterinaararstiks."
                         },
                         "children": []
                     },
@@ -174,7 +187,8 @@
                             "pt": "Gosta de desenhar e pintar.",
                             "en": "Loves to draw and paint.",
                             "de": "Liebt es zu zeichnen und zu malen.",
-                            "fr": "Aime dessiner et peindre."
+                            "fr": "Aime dessiner et peindre.",
+                            "et": "Armastab joonistada ja maalida."
                         },
                         "children": []
                     }

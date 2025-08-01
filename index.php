@@ -60,6 +60,7 @@
         <button class="flag-btn" onclick="switchLanguage('en')" id="en-flag" title="English">🇺🇸</button>
         <button class="flag-btn" onclick="switchLanguage('de')" id="de-flag" title="Deutsch">🇩🇪</button>
         <button class="flag-btn" onclick="switchLanguage('fr')" id="fr-flag" title="Français">🇫🇷</button>
+        <button class="flag-btn" onclick="switchLanguage('et')" id="et-flag" title="Eesti">🇪🇪</button>
     </div>
 
     <!-- Back to Trees Button -->
@@ -113,7 +114,7 @@
             <div class="tree" id="family-tree">
                 <!-- Family tree will be dynamically loaded here -->
             </div>
-            <button class="empty-tree-btn" id="addFirstPersonBtn" onclick="showAddMemberModal('root', 'child')">Add First Person</button>
+            <button class="empty-tree-btn" id="addFirstPersonBtn" onclick="showAddMemberModal('root', 'child')" data-translate="add-first-person">Add First Person</button>
         </div>
         
         <footer class="text-center mt-8 md:mt-12 text-white text-sm">
@@ -157,7 +158,7 @@
                 
                 <div class="form-group">
                     <label class="form-label" data-translate="details-label">Details (Birth date, profession, etc.):</label>
-                    <textarea class="form-textarea" id="memberDetails" rows="4" placeholder="pt: (Texto em Português)&#10;en: (Text in English)&#10;de: (Text in German)"></textarea>
+                    <textarea class="form-textarea" id="memberDetails" rows="4" placeholder="pt: (Texto em Português)&#10;en: (Text in English)&#10;de: (Text in German)&#10;et: (Tekst eesti keeles)"></textarea>
                 </div>
                 
                 <div class="form-group">
@@ -234,7 +235,25 @@
                 "sibling-option": "Sibling",
                 "cancel-btn": "Cancel",
                 "add-btn": "Add Member",
-                "birth-date-label": "Born in:"
+                "birth-date-label": "Born in:",
+                "add-first-person": "Add First Person",
+                "edit-person-title": "Edit",
+                "save-changes-btn": "Save Changes",
+                "delete-person-confirm": "Are you sure you want to delete",
+                "delete-person-warning": "This action cannot be undone.",
+                "delete-person-error": "Failed to delete person",
+                "delete-person-error-general": "An error occurred while deleting the person.",
+                "required-fields-error": "Please fill in all required fields.",
+                "action-member-error": "Failed to",
+                "action-member-error-general": "An error occurred while",
+                "upload-photo-error": "Failed to upload photo",
+                "upload-photo-error-general": "Error uploading photo. Please try again.",
+                "delete-photo-confirm": "Delete photo for",
+                "delete-photo-error": "Failed to delete photo",
+                "delete-photo-error-general": "Error deleting photo. Please try again.",
+                "no-photo-to-delete": "No photo to delete for this person.",
+                "tree-not-found": "Tree not found. Redirecting to trees page.",
+                "edit-member-title": "Edit"
             },
             pt: {
                 title: "Árvore Genealógica",
@@ -265,7 +284,25 @@
                 "sibling-option": "Irmão/Irmã",
                 "cancel-btn": "Cancelar",
                 "add-btn": "Adicionar Membro",
-                "birth-date-label": "Nascido em:"
+                "birth-date-label": "Nascido em:",
+                "add-first-person": "Adicionar Primeira Pessoa",
+                "edit-person-title": "Editar",
+                "save-changes-btn": "Salvar Alterações",
+                "delete-person-confirm": "Tem certeza que deseja excluir",
+                "delete-person-warning": "Esta ação não pode ser desfeita.",
+                "delete-person-error": "Falha ao excluir pessoa",
+                "delete-person-error-general": "Ocorreu um erro ao excluir a pessoa.",
+                "required-fields-error": "Por favor, preencha todos os campos obrigatórios.",
+                "action-member-error": "Falha ao",
+                "action-member-error-general": "Ocorreu um erro ao",
+                "upload-photo-error": "Falha ao carregar foto",
+                "upload-photo-error-general": "Erro ao carregar foto. Tente novamente.",
+                "delete-photo-confirm": "Excluir foto de",
+                "delete-photo-error": "Falha ao excluir foto",
+                "delete-photo-error-general": "Erro ao excluir foto. Tente novamente.",
+                "no-photo-to-delete": "Nenhuma foto para excluir para esta pessoa.",
+                "tree-not-found": "Árvore não encontrada. Redirecionando para a página de árvores.",
+                "edit-member-title": "Editar"
             },
             de: {
                 title: "Stammbaum",
@@ -296,7 +333,25 @@
                 "sibling-option": "Geschwister",
                 "cancel-btn": "Abbrechen",
                 "add-btn": "Mitglied hinzufügen",
-                "birth-date-label": "Geboren in:"
+                "birth-date-label": "Geboren in:",
+                "add-first-person": "Erste Person hinzufügen",
+                "edit-person-title": "Bearbeiten",
+                "save-changes-btn": "Änderungen speichern",
+                "delete-person-confirm": "Sind Sie sicher, dass Sie löschen möchten",
+                "delete-person-warning": "Diese Aktion kann nicht rückgängig gemacht werden.",
+                "delete-person-error": "Person löschen fehlgeschlagen",
+                "delete-person-error-general": "Beim Löschen der Person ist ein Fehler aufgetreten.",
+                "required-fields-error": "Bitte füllen Sie alle erforderlichen Felder aus.",
+                "action-member-error": "Fehler bei",
+                "action-member-error-general": "Ein Fehler ist aufgetreten bei",
+                "upload-photo-error": "Foto hochladen fehlgeschlagen",
+                "upload-photo-error-general": "Fehler beim Hochladen des Fotos. Bitte versuchen Sie es erneut.",
+                "delete-photo-confirm": "Foto löschen für",
+                "delete-photo-error": "Foto löschen fehlgeschlagen",
+                "delete-photo-error-general": "Fehler beim Löschen des Fotos. Bitte versuchen Sie es erneut.",
+                "no-photo-to-delete": "Kein Foto zum Löschen für diese Person.",
+                "tree-not-found": "Baum nicht gefunden. Weiterleitung zur Baumseite.",
+                "edit-member-title": "Bearbeiten"
             },
             fr: {
                 title: "Arbre Généalogique",
@@ -327,7 +382,75 @@
                 "sibling-option": "Frère/Sœur",
                 "cancel-btn": "Annuler",
                 "add-btn": "Ajouter un Membre",
-                "birth-date-label": "Né en:"
+                "birth-date-label": "Né en:",
+                "add-first-person": "Ajouter la Première Personne",
+                "edit-person-title": "Modifier",
+                "save-changes-btn": "Enregistrer les Modifications",
+                "delete-person-confirm": "Êtes-vous sûr de vouloir supprimer",
+                "delete-person-warning": "Cette action ne peut pas être annulée.",
+                "delete-person-error": "Échec de la suppression de la personne",
+                "delete-person-error-general": "Une erreur s'est produite lors de la suppression de la personne.",
+                "required-fields-error": "Veuillez remplir tous les champs obligatoires.",
+                "action-member-error": "Échec de",
+                "action-member-error-general": "Une erreur s'est produite lors de",
+                "upload-photo-error": "Échec du téléchargement de la photo",
+                "upload-photo-error-general": "Erreur lors du téléchargement de la photo. Veuillez réessayer.",
+                "delete-photo-confirm": "Supprimer la photo de",
+                "delete-photo-error": "Échec de la suppression de la photo",
+                "delete-photo-error-general": "Erreur lors de la suppression de la photo. Veuillez réessayer.",
+                "no-photo-to-delete": "Aucune photo à supprimer pour cette personne.",
+                "tree-not-found": "Arbre non trouvé. Redirection vers la page des arbres.",
+                "edit-member-title": "Modifier"
+            },
+            et: {
+                title: "Sugupuu",
+                "back-to-trees": "Tagasi puude juurde",
+                "scroll-hint": "← Keri horisontaalselt, et sugupuud uurida →",
+                deceased: "Surnud",
+                daughter: "Tütar",
+                "letter-author": "Kirja autor",
+                "denise-spouse": "Abikaasa",
+                "vertical-view": "Vertikaalne",
+                "horizontal-view": "Horisontaalne",
+                "upload-photo": "Laadi foto üles",
+                "view-photo": "Vaata",
+                "delete-photo": "Kustuta foto",
+                "heritage": "Perekonna ajaloo säilitamine põlvkondade kaupa",
+                footer: "Liiguta ja keri horisontaalselt, et näha kogu puud.",
+                "add-member-title": "Lisa uus pereliige",
+                "name-label": "Nimi",
+                "details-label": "Üksikasjad (sünniaeg, amet jne)",
+                "status-label": "Staatus",
+                "alive-option": "Elus",
+                "deceased-option": "Surnud",
+                "relationship-label": "Suhe valitud isikuga",
+                "select-relationship": "Vali suhe...",
+                "child-option": "Laps",
+                "spouse-option": "Abikaasa",
+                "parent-option": "Vanem",
+                "sibling-option": "Õde/vend",
+                "cancel-btn": "Tühista",
+                "add-btn": "Lisa liige",
+                "birth-date-label": "Sündinud:",
+                "deceased-date-label": "Surma kuupäev:",
+                "add-first-person": "Lisa esimene isik",
+                "edit-person-title": "Muuda",
+                "save-changes-btn": "Salvesta muudatused",
+                "delete-person-confirm": "Kas oled kindel, et soovid kustutada",
+                "delete-person-warning": "Seda tegevust ei saa tagasi võtta.",
+                "delete-person-error": "Isiku kustutamine ebaõnnestus",
+                "delete-person-error-general": "Isiku kustutamisel tekkis viga.",
+                "required-fields-error": "Palun täida kõik nõutud väljad.",
+                "action-member-error": "Liikme tegevus ebaõnnestus",
+                "action-member-error-general": "Liikme toimingul tekkis viga.",
+                "upload-photo-error": "Foto üleslaadimine ebaõnnestus",
+                "upload-photo-error-general": "Foto üleslaadimisel tekkis viga. Palun proovi uuesti.",
+                "delete-photo-confirm": "Kustuta foto kasutajale",
+                "delete-photo-error": "Foto kustutamine ebaõnnestus",
+                "delete-photo-error-general": "Foto kustutamisel tekkis viga. Palun proovi uuesti.",
+                "no-photo-to-delete": "Sellel isikul pole fotot kustutamiseks.",
+                "tree-not-found": "Puud ei leitud. Suunatakse puude lehele.",
+                "edit-member-title": "Muuda"
             }
         };
 
@@ -444,7 +567,7 @@
                 
                 currentTreeData = trees.find(tree => tree.id === currentTreeId);
                 if (!currentTreeData) {
-                    alert('Tree not found. Redirecting to trees page.');
+                    alert(translations[currentLanguage]['tree-not-found']);
                     window.location.href = 'trees.php';
                     return;
                 }
@@ -627,7 +750,7 @@
             
             let detailsString = '';
             if (person.details && typeof person.details === 'object') {
-                detailsString = `pt: ${person.details.pt || ''}\nen: ${person.details.en || ''}\nde: ${person.details.de || ''}`;
+                detailsString = `pt: ${person.details.pt || ''}\nen: ${person.details.en || ''}\nde: ${person.details.de || ''}\net: ${person.details.et || ''}`;
             }
 
             let cardHtml = `<div class="${classes}" 
@@ -712,7 +835,7 @@
             const details = JSON.parse(unescape(personCard.dataset.personDetails));
             let detailsText = '';
             if (details) {
-                detailsText = `pt: ${details.pt || ''}\nen: ${details.en || ''}\nde: ${details.de || ''}`;
+                detailsText = `pt: ${details.pt || ''}\nen: ${details.en || ''}\nde: ${details.de || ''}\net: ${details.et || ''}`;
             }
 
             document.getElementById('memberName').value = personCard.dataset.personName;
@@ -726,11 +849,11 @@
                 document.getElementById('birthDate').value = personCard.dataset.birthDate || '';
             }
 
-            document.getElementById('formTitle').removeAttribute('data-translate');
-            document.getElementById('formTitle').textContent = 'Edit ' + personCard.dataset.personName;
+            document.getElementById('formTitle').setAttribute('data-translate', 'edit-member-title');
+            document.getElementById('formTitle').textContent = translations[currentLanguage]['edit-member-title'] + ' ' + personCard.dataset.personName;
             
-            document.getElementById('submitBtn').removeAttribute('data-translate');
-            document.getElementById('submitBtn').textContent = 'Save Changes';
+            document.getElementById('submitBtn').setAttribute('data-translate', 'save-changes-btn');
+            document.getElementById('submitBtn').textContent = translations[currentLanguage]['save-changes-btn'];
 
             document.getElementById('relationshipGroup').style.display = 'none';
             document.getElementById('relationship').removeAttribute('required');
@@ -750,7 +873,7 @@
         // Delete a person
         async function deletePerson(personId) {
             const personName = document.querySelector(`[data-person-id="${personId}"]`).dataset.personName;
-            if (confirm(`Are you sure you want to delete ${personName}? This action cannot be undone.`)) {
+            if (confirm(`${translations[currentLanguage]['delete-person-confirm']} ${personName}? ${translations[currentLanguage]['delete-person-warning']}`)) {
                 try {
                     const response = await fetch('delete_person.php', {
                         method: 'POST',
@@ -761,11 +884,11 @@
                     if (result.success) {
                         await loadFamilyTreeData();
                     } else {
-                        alert('Failed to delete person: ' + result.error);
+                        alert(translations[currentLanguage]['delete-person-error'] + ': ' + result.error);
                     }
                 } catch (error) {
                     console.error('Error deleting person:', error);
-                    alert('An error occurred while deleting the person.');
+                    alert(translations[currentLanguage]['delete-person-error-general']);
                 }
             }
         }
@@ -856,11 +979,12 @@
                 const birthDate = document.getElementById('birthDate').value;
 
                 // Parse details
-                const details = { pt: '', en: '', de: '' };
+                const details = { pt: '', en: '', de: '', et: '' };
                 detailsText.split('\n').forEach(line => {
                     if (line.startsWith('pt:')) details.pt = line.substring(3).trim();
                     if (line.startsWith('en:')) details.en = line.substring(3).trim();
                     if (line.startsWith('de:')) details.de = line.substring(3).trim();
+                    if (line.startsWith('et:')) details.et = line.substring(3).trim();
                 });
 
                 let data = {
@@ -887,7 +1011,7 @@
                 }
 
                 if (!name || (action === 'add' && familyTreeData && !relationship)) {
-                    alert('Please fill in all required fields.');
+                    alert(translations[currentLanguage]['required-fields-error']);
                     return;
                 }
 
@@ -904,11 +1028,11 @@
                         closeAddMemberModal();
                         await loadFamilyTreeData();
                     } else {
-                        alert(`Failed to ${action} member: ` + result.error);
+                        alert(`${translations[currentLanguage]['action-member-error']} ${action} member: ` + result.error);
                     }
                 } catch (error) {
                     console.error(`Error ${action}ing member:`, error);
-                    alert(`An error occurred while ${action}ing the member.`);
+                    alert(`${translations[currentLanguage]['action-member-error-general']} ${action}ing the member.`);
                 }
             });
             
@@ -1014,11 +1138,11 @@
                     await loadPhotoMappings();
                 } else {
                     console.error('Upload failed:', result.error);
-                    alert('Failed to upload photo: ' + result.error);
+                    alert(translations[currentLanguage]['upload-photo-error'] + ': ' + result.error);
                 }
             } catch (error) {
                 console.error('Upload error:', error);
-                alert('Error uploading photo. Please try again.');
+                alert(translations[currentLanguage]['upload-photo-error-general']);
             }
         }
 
@@ -1107,7 +1231,7 @@
             const filename = window.photoMappings && window.photoMappings[personName];
             
             if (filename) {
-                const confirmDelete = confirm(`Delete photo for ${personName}?`);
+                const confirmDelete = confirm(`${translations[currentLanguage]['delete-photo-confirm']} ${personName}?`);
                 if (confirmDelete) {
                     try {
                         const response = await fetch('delete_photo.php', {
@@ -1137,15 +1261,15 @@
                             console.log(`Photo deleted successfully: ${filename}`);
                         } else {
                             console.error('Delete failed:', result.error);
-                            alert('Failed to delete photo: ' + result.error);
+                            alert(translations[currentLanguage]['delete-photo-error'] + ': ' + result.error);
                         }
                     } catch (error) {
                         console.error('Delete error:', error);
-                        alert('Error deleting photo. Please try again.');
+                        alert(translations[currentLanguage]['delete-photo-error-general']);
                     }
                 }
             } else {
-                alert('No photo to delete for this person.');
+                alert(translations[currentLanguage]['no-photo-to-delete']);
             }
         }
 

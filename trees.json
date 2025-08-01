@@ -5,12 +5,14 @@
             "title": {
                 "pt": "Smith Family",
                 "en": "Example Family",
-                "de": "Familie Example"
+                "de": "Familie Example",
+                "et": "Näidisperekond"
             },
             "subtitle": {
                 "pt": "Uma representação visual das conexões familiares",
                 "en": "A visual representation of a family",
-                "de": "Eine visuelle Darstellung der familiären"
+                "de": "Eine visuelle Darstellung der familiären",
+                "et": "Perekondlike seoste visuaalne esitus"
             },
             "image": "tree_images\/example_family_cover.jpeg",
             "dataFile": "data.json",

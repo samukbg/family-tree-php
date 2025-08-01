@@ -33,6 +33,7 @@
         <button class="flag-btn bg-white/20 backdrop-blur-sm px-3 py-2 rounded-lg hover:bg-white/30 transition-all duration-300" onclick="switchLanguage('en')" id="en-flag" title="English">🇺🇸</button>
         <button class="flag-btn bg-white/20 backdrop-blur-sm px-3 py-2 rounded-lg hover:bg-white/30 transition-all duration-300" onclick="switchLanguage('de')" id="de-flag" title="Deutsch">🇩🇪</button>
         <button class="flag-btn bg-white/20 backdrop-blur-sm px-3 py-2 rounded-lg hover:bg-white/30 transition-all duration-300" onclick="switchLanguage('fr')" id="fr-flag" title="Français">🇫🇷</button>
+        <button class="flag-btn bg-white/20 backdrop-blur-sm px-3 py-2 rounded-lg hover:bg-white/30 transition-all duration-300" onclick="switchLanguage('et')" id="et-flag" title="Eesti">🇪🇪</button>
     </div>
 
     <div class="container mx-auto px-4 py-12">
@@ -88,7 +89,7 @@
                 
                 <div class="mb-6">
                     <label class="block text-gray-800 font-semibold mb-3 text-sm uppercase tracking-wide" data-translate="tree-subtitle-label">Descrição:</label>
-                    <textarea id="treeSubtitle" name="treeSubtitle" rows="4" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all bg-gray-50 focus:bg-white resize-none" placeholder="pt: Descrição em português&#10;en: Description in English&#10;de: Beschreibung auf Deutsch&#10;fr: Description en français"></textarea>
+                    <textarea id="treeSubtitle" name="treeSubtitle" rows="4" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all bg-gray-50 focus:bg-white resize-none" placeholder="pt: Descrição em português&#10;en: Description in English&#10;de: Beschreibung auf Deutsch&#10;fr: Description en français&#10;et: Kirjeldus eesti keeles"></textarea>
                     <p class="text-sm text-gray-500 mt-2" data-translate="subtitle-format-hint">Use o formato: pt: texto, en: text, de: text, fr: text</p>
                 </div>
                 
@@ -230,6 +231,33 @@
                 "save-error": "Erreur",
                 "save-error-retry": "Erreur lors de l'enregistrement de l'arbre. Veuillez réessayer.",
                 "subtitle-format-hint": "Utilisez le format: pt: texte, en: text, de: text, fr: text"
+            },
+            et: {
+                "main-title": "Sugupuud",
+                "main-subtitle": "Halda oma perekonna sugupuid",
+                "add-tree-title": "Lisa uus puu",
+                "edit-tree-title": "Muuda puud",
+                "tree-title-label": "Puu pealkiri:",
+                "tree-subtitle-label": "Kirjeldus:",
+                "tree-image-label": "Puu pilt:",
+                "select-image-btn": "Vali pilt",
+                "image-format-info": "PNG, JPG või WebP kuni 5MB",
+                "cancel-btn": "Tühista",
+                "save-btn": "Salvesta",
+                "add-new-tree": "Lisa uus puu",
+                "click-to-add": "Klõpsa, et luua oma esimene sugupuu",
+                "create-new-label": "Loo uus sugupuu",
+                "updated-label": "Uuendatud",
+                "view-photo": "Vaata pilti",
+                "enter-family-tree": "Sisene sugupuusse",
+                "delete-confirm": "Kas oled kindel, et soovid kustutada",
+                "delete-warning": "Seda tegevust ei saa tagasi võtta ja see kustutab kõik selle puu perekonna andmed.",
+                "delete-error": "Viga puu kustutamisel",
+                "delete-error-retry": "Viga puu kustutamisel. Palun proovi uuesti.",
+                "no-image-message": "Sellel puul pole kaanepilti.",
+                "save-error": "Viga",
+                "save-error-retry": "Viga puu salvestamisel. Palun proovi uuesti.",
+                "subtitle-format-hint": "Kasuta vormi: pt: tekst, en: text, de: text, fr: text, et: tekst"
             }
         };
 
@@ -246,7 +274,7 @@
             
             const lines = text.split('\n');
             lines.forEach(line => {
-                const match = line.match(/^(pt|en|de|fr):\s*(.+)$/);
+                const match = line.match(/^(pt|en|de|fr|et):\s*(.+)$/);
                 if (match) {
                     const [, lang, content] = match;
                     result[lang] = content.trim();
@@ -388,7 +416,7 @@
             // Format subtitle as multilingual text
             let subtitleText = '';
             if (tree.subtitle) {
-                const languages = ['pt', 'en', 'de', 'fr'];
+                const languages = ['pt', 'en', 'de', 'fr', 'et'];
                 const subtitleParts = [];
                 languages.forEach(lang => {
                     if (tree.subtitle[lang]) {

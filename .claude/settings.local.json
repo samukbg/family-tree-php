@@ -3,7 +3,10 @@
   "permissions": {
     "allow": [
       "Bash(ls:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(php:*)",
+      "Bash(python3:*)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }
