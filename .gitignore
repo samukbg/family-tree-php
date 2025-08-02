@@ -3,3 +3,6 @@
 
 # Ignore old json files
 *-old.json
+
+# Ignore family-tree deployment folder
+family-tree/

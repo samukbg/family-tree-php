@@ -30,7 +30,7 @@ To get started with this project, you will need a local web server with PHP supp
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/family-tree.git
+   git clone https://github.com/samukbg/family-tree.git
    ```
 
 2. **Navigate to the project directory:**
