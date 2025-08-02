@@ -2,11 +2,15 @@
 
 This project is a dynamic and interactive family tree application that allows users to visualize and manage their family connections. It is built with PHP, JavaScript, and Tailwind CSS, and it features a clean, modern interface.
 
+## 🌐 Live Demo
+
+Try the application live at: **[https://family-tree.wasmer.app/](https://family-tree.wasmer.app/)**
+
 ## Features
 
 - **Interactive Tree Views:** Switch between vertical and horizontal layouts to explore the family tree.
 - **Dynamic Content:** Add, edit, and delete family members through an intuitive interface.
-- **Multilingual Support:** The application supports English, Portuguese, and German.
+- **Multilingual Support:** The application supports 5 languages - Portuguese (🇧🇷), English (🇺🇸), German (🇩🇪), French (🇫🇷), and Estonian (🇪🇪).
 - **Image Uploads:** Personalize each family member's card with a photo.
 - **Editable Title and Subtitle:** Customize the main page text to match your family's identity.
 
