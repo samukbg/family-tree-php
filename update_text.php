@@ -3,11 +3,11 @@ header('Content-Type: application/json');
 
 // Get site data file based on tree parameter
 function getSiteDataFile() {
-    $treeId = $_GET['tree'] ?? $_POST['tree'] ?? null;
+    $treeId = $_GET['tree'] ?? $_POST['tree'] ?? $_GET['id'] ?? $_POST['id'] ?? null;
     if (!$treeId) {
         // Try to get from input data
         $input = json_decode(file_get_contents('php://input'), true);
-        $treeId = $input['tree'] ?? null;
+        $treeId = $input['tree'] ?? $input['id'] ?? null;
     }
     
     if ($treeId) {

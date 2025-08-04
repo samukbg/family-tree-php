@@ -8,12 +8,14 @@ function getDataFile($input = null) {
     // Try to get tree ID from various sources
     if ($input && isset($input['tree'])) {
         $treeId = $input['tree'];
+    } elseif ($input && isset($input['id'])) {
+        $treeId = $input['id'];
     } else {
-        $treeId = $_GET['tree'] ?? $_POST['tree'] ?? null;
+        $treeId = $_GET['tree'] ?? $_POST['tree'] ?? $_GET['id'] ?? $_POST['id'] ?? null;
         if (!$treeId) {
             // Try to get from input data
             $inputData = json_decode(file_get_contents('php://input'), true);
-            $treeId = $inputData['tree'] ?? null;
+            $treeId = $inputData['tree'] ?? $inputData['id'] ?? null;
         }
     }
     

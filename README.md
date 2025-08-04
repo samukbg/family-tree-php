@@ -8,21 +8,23 @@ Try the application live at: **[https://family-tree.wasmer.app/](https://family-
 
 ## Features
 
-- **Interactive Tree Views:** Switch between vertical and horizontal layouts to explore the family tree.
+- **Multiple Family Trees:** Create and manage multiple family trees from the main dashboard.
+- **Interactive Tree Views:** Switch between vertical and horizontal layouts to explore each family tree.
 - **Dynamic Content:** Add, edit, and delete family members through an intuitive interface.
-- **Multilingual Support:** The application supports 5 languages - Portuguese (🇧🇷), English (🇺🇸), German (🇩🇪), French (🇫🇷), and Estonian (🇪🇪).
-- **Image Uploads:** Personalize each family member's card with a photo.
-- **Editable Title and Subtitle:** Customize the main page text to match your family's identity.
+- **Multilingual Support:** The application supports 5 languages - English (🇺🇸), Portuguese Brazilian (🇧🇷), Estonian (🇪🇪), French (🇫🇷), and German (🇩🇪) with URL persistence.
+- **Image Uploads:** Personalize each family member's card with a photo and add cover images for each tree.
+- **Language Persistence:** Selected language is maintained across navigation and stored in URL parameters.
+- **Tree Management:** Create, edit, and delete family trees with custom titles and multilingual descriptions.
 
 ## Screenshots
 
 Here are a few screenshots of the application in action:
 
-### Family Trees View
-![Family Tree Vertical View](./screenshot-1.png)
+### Main Dashboard (Family Trees)
+![Family Trees Dashboard](./screenshot-1.png)
 
-### Selected Tree View
-![Family Tree Horizontal View](./screenshot-2.png)
+### Individual Tree View
+![Individual Family Tree](./screenshot-2.png)
 
 ## Getting Started
 
@@ -38,29 +40,52 @@ To get started with this project, you will need a local web server with PHP supp
    cd family-tree
    ```
 
-3. **Start your local web server** and open the `index.php` file in your browser.
+3. **Start your local web server** and navigate to the project directory in your browser.
 
 ## Project Structure
 
-- `index.php`: The main application file.
+### Main Files
+- `index.php`: Main dashboard displaying all family trees.
+- `tree.php`: Individual family tree viewer (accessed via `tree.php?id=tree_id&lang=language`).
 - `style.css`: Contains all the styles for the application.
-- `data.json`: Stores the family tree data.
-- `site_data.json`: Stores the editable title and subtitle.
+- `trees.json`: Stores metadata for all family trees.
+
+### Data Files
+- `data.json`: Default family tree data (fallback).
+- `site_data.json`: Stores editable titles and subtitles for trees.
 - `images/photos.json`: Maps person names to their photo filenames.
-- `add_person.php`, `edit_person.php`, `delete_person.php`: Back-end scripts for managing family members.
-- `upload_image.php`, `delete_photo.php`, `get_photos.php`: Back-end scripts for handling image uploads.
-- `update_text.php`: Back-end script for saving the editable text.
+- `tree_images/`: Directory containing cover images for family trees.
+
+### Backend Scripts
+- `manage_trees.php`: Handles creation, editing, and deletion of family trees.
+- `add_person.php`, `edit_person.php`, `delete_person.php`: Scripts for managing family members.
+- `upload_image.php`, `delete_photo.php`, `get_photos.php`: Scripts for handling image uploads.
+- `update_text.php`: Script for saving editable text content.
 
 ## Example Files
 
 The project includes example JSON files to help you get started:
 
-- `data.example.json`
-- `site_data.example.json`
-- `images/photos.example.json`
-- `trees_example.json`
+- `data.example.json` - Sample family tree data
+- `site_data.example.json` - Sample site configuration
+- `images/photos.example.json` - Sample photo mappings
+- `trees_example.json` - Sample tree metadata
 
-Copy these files to their corresponding non-example filenames (e.g., `data.json`) to start with a sample data set.
+Copy these files to their corresponding non-example filenames (e.g., `trees.json`) to start with a sample data set.
+
+## URL Structure
+
+- **Main Dashboard:** `index.php?lang=en` (or other language codes)
+- **Individual Tree:** `tree.php?id=tree_id&lang=en`
+- **Language Parameter:** Supported languages are `en`, `pt`, `et`, `fr`, `de`
+
+## Navigation Flow
+
+1. **Main Dashboard** - View all available family trees
+2. **Tree Selection** - Click on a tree to view its members  
+3. **Tree Management** - Add, edit, or delete family members
+4. **Language Switching** - Language selection persists across all pages
+5. **Back Navigation** - Return to main dashboard while preserving language
 
 ## How to Install and Run
 
@@ -73,9 +98,10 @@ Copy these files to their corresponding non-example filenames (e.g., `data.json`
    - Ensure that the web server has write permissions to the `data.json`, `site_data.json`, and `images/photos.json` files, as well as the `images` directory.
 
 3. **Running the Application:**
-   - Open the `index.php` file in your web browser.
-   - If you are starting with an empty `data.json` file, you will see a button to add the first person.
-   - To start with a sample data set, copy the contents of the `.example.json` files to their corresponding non-example filenames.
+   - Navigate to the project directory in your web browser to access the main dashboard.
+   - Create your first family tree using the "Add New Tree" option.
+   - Click on any tree to view and manage individual family members.
+   - To start with sample data, copy the contents of the `.example.json` files to their corresponding non-example filenames.
 
 ## License
 

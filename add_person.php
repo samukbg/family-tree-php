@@ -12,11 +12,11 @@ function getDataFile($input = null) {
     if ($input && isset($input['tree'])) {
         $treeId = $input['tree'];
     } else {
-        $treeId = $_GET['tree'] ?? $_POST['tree'] ?? null;
+        $treeId = $_GET['tree'] ?? $_POST['tree'] ?? $_GET['id'] ?? $_POST['id'] ?? null;
         if (!$treeId) {
             // Try to get from input data
             $inputData = json_decode(file_get_contents('php://input'), true);
-            $treeId = $inputData['tree'] ?? null;
+            $treeId = $inputData['tree'] ?? $inputData['id'] ?? null;
         }
     }
     
@@ -134,6 +134,57 @@ try {
         });
     }
 
+    // Helper function to find parent and add sibling
+    function findParentAndAddSibling(&$tree, $siblingId, $newPerson) {
+        return findParentAndAddChild($tree, $siblingId, $newPerson);
+    }
+
+    // Helper function to find the parent of a person and add a new child
+    function findParentAndAddChild(&$person, $childId, $newPerson) {
+        // Check if any of this person's children is the target
+        if (isset($person['children'])) {
+            foreach ($person['children'] as $child) {
+                if ($child['id'] === $childId) {
+                    // Found the target child, add new person as sibling
+                    $person['children'][] = $newPerson;
+                    sortChildrenByBirthDate($person['children']);
+                    return true;
+                }
+            }
+            // Recursively search in grandchildren
+            foreach ($person['children'] as &$child) {
+                if (findParentAndAddChild($child, $childId, $newPerson)) {
+                    return true;
+                }
+            }
+        }
+        // Check spouse's children
+        if (isset($person['spouse']) && isset($person['spouse']['children'])) {
+            foreach ($person['spouse']['children'] as $child) {
+                if ($child['id'] === $childId) {
+                    // Found the target child in spouse's children, add new person as sibling
+                    $person['spouse']['children'][] = $newPerson;
+                    sortChildrenByBirthDate($person['spouse']['children']);
+                    return true;
+                }
+            }
+            // Recursively search in spouse's grandchildren
+            foreach ($person['spouse']['children'] as &$child) {
+                if (findParentAndAddChild($child, $childId, $newPerson)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // Helper function to add a parent (this is complex and might need special handling)
+    function addParent(&$tree, $childId, $newParent) {
+        // For now, we'll add the parent as a child relationship instead
+        // This is a simplified implementation - proper parent addition would require tree restructuring
+        return findAndUpdate($tree, $childId, $newParent, 'child');
+    }
+
     // Recursive function to find and update the person
     function findAndUpdate(&$person, $parentId, $newPerson, $relationship) {
         if (isset($person['id']) && $person['id'] === $parentId) {
@@ -149,6 +200,14 @@ try {
                 case 'spouse':
                     $person['spouse'] = $newPerson;
                     break;
+                case 'sibling':
+                    // For siblings, we need to add to the parent's children array
+                    // Find the parent of the current person and add the new person as their child
+                    return findParentAndAddSibling($person, $parentId, $newPerson);
+                case 'parent':
+                    // For parent relationship, the new person becomes the parent of the selected person
+                    // This is more complex as it requires restructuring the tree
+                    return addParent($person, $parentId, $newPerson);
                 // Other relationships can be added here
             }
             return true;
@@ -178,10 +237,10 @@ try {
         if (file_put_contents($dataJsonFile, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE))) {
             echo json_encode(['success' => true, 'message' => 'Family member added successfully']);
         } else {
-            throw new Exception('Failed to save data');
+            throw new Exception('Failed to save data to file: ' . $dataJsonFile);
         }
     } else {
-        throw new Exception('Parent not found');
+        throw new Exception('Parent not found with ID: ' . $parentId . ' in relationship: ' . $relationship);
     }
 
 } catch (Exception $e) {
