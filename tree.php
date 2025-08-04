@@ -47,7 +47,7 @@
         .photo-preview-image {
             width: 100%;
             height: auto;
-            max-height: 80vh;
+            max-height: 60vh;
             object-fit: contain;
         }
     </style>

@@ -302,7 +302,6 @@ body::before {
 }
 
 .deceased {
-    opacity: 0.8;
     background: linear-gradient(145deg, #f3f4f6, #e5e7eb);
     border-color: rgba(107, 114, 128, 0.3);
     white-space: normal;
@@ -546,10 +545,10 @@ body::before {
 
 .photo-preview-close {
     position: absolute;
-    top: -60px;
-    right: -10px;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     width: 45px;
     height: 45px;
@@ -561,11 +560,13 @@ body::before {
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(10px);
-    z-index: 1;
+    z-index: 1001;
+    transition: all 0.3s ease;
 }
 
 .photo-preview-close:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
     transform: scale(1.1);
 }
 
@@ -583,8 +584,8 @@ body::before {
     }
     
     .photo-preview-close {
-        top: -50px;
-        right: -5px;
+        top: 5px;
+        right: 5px;
         width: 40px;
         height: 40px;
         font-size: 1.3rem;
@@ -704,7 +705,7 @@ body::before {
     overflow-x: auto;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    max-height: 80vh;
+    max-height: 60vh;
     padding: 20px;
 }
 
@@ -1114,7 +1115,7 @@ body::before {
     max-width: 550px;
     animation: slideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    max-height: 80vh;
+    max-height: 60vh;
     overflow-y: auto;
 }
 
