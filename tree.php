@@ -90,7 +90,7 @@
                 </div>
                 
                 <div class="max-w-4xl mx-auto">
-                    <p id="subtitle" class="editable-field text-lg md:text-xl text-blue-50/90 leading-relaxed font-medium tracking-wide mb-4" contenteditable="true" onblur="saveText('subtitle', this.innerText)" data-translate="subtitle">Uma representação visual das conexões familiares da carta de 1984, com idades atualizadas para 2025.</p>
+                    <p id="subtitle" class="editable-field text-lg md:text-xl text-blue-50/90 leading-relaxed font-medium tracking-wide mb-4" contenteditable="true" onblur="saveText('subtitle', this.innerText)">...</p>
                     <p class="text-sm md:text-base text-white/70 italic" data-translate="heritage">Preservando nossa história familiar através das gerações</p>
                 </div>
             </div>
@@ -518,8 +518,8 @@
                     }
                 });
 
-                // Restore saved text after translation
-                loadSiteData();
+                // Update tree title and subtitle after language change
+                updateTreeTitleAndSubtitle();
 
                 // Update dynamic person details
                 document.querySelectorAll('.tree-card').forEach(card => {
@@ -533,6 +533,9 @@
                         }
                     }
                 });
+                
+                // Update tree title and subtitle for new language
+                updateTreeTitleAndSubtitle();
                 
                 content.classList.remove('loading');
             }, 150);
@@ -576,6 +579,9 @@
                     window.location.href = 'index.php';
                     return;
                 }
+                
+                // Update page title and subtitle with tree metadata
+                updateTreeTitleAndSubtitle();
             } catch (error) {
                 console.error('Error loading trees data:', error);
                 window.location.href = 'index.php';
@@ -898,19 +904,44 @@
             }
         }
 
+        // Update tree title and subtitle from tree metadata
+        function updateTreeTitleAndSubtitle() {
+            if (!currentTreeData) {
+                console.log('No tree data available for title/subtitle update');
+                return;
+            }
+            
+            // Set family name from tree title
+            const treeTitle = currentTreeData.title[currentLanguage] || currentTreeData.title.en || Object.values(currentTreeData.title)[0] || '';
+            const familyNameEl = document.getElementById('family-name');
+            if (familyNameEl) {
+                familyNameEl.textContent = treeTitle;
+            }
+            
+            // Set subtitle from tree subtitle
+            const treeSubtitle = currentTreeData.subtitle[currentLanguage] || currentTreeData.subtitle.en || Object.values(currentTreeData.subtitle)[0] || '';
+            const subtitleEl = document.getElementById('subtitle');
+            if (subtitleEl) {
+                subtitleEl.textContent = treeSubtitle;
+            }
+            
+            console.log(`Updated title to: "${treeTitle}" and subtitle to: "${treeSubtitle}" for language: ${currentLanguage}`);
+        }
+
         async function loadSiteData() {
             try {
                 const siteDataFile = getSiteDataFileName();
                 const response = await fetch(`${siteDataFile}?v=` + Date.now());
                 siteData = await response.json();
-                if (siteData['family-name']) {
-                    document.getElementById('family-name').textContent = siteData['family-name'];
-                }
-                if (siteData.subtitle && siteData.subtitle[currentLanguage]) {
-                    document.getElementById('subtitle').textContent = siteData.subtitle[currentLanguage];
-                }
+                
+                // Always use tree metadata for title and subtitle to ensure consistency
+                // Site data is only for user customizations beyond the base tree info
+                updateTreeTitleAndSubtitle();
+                
             } catch (e) {
-                console.log('Site data file not found, using default text.');
+                console.log('Site data file not found, using tree metadata.');
+                // If site data fails, use tree metadata
+                updateTreeTitleAndSubtitle();
             }
         }
 
